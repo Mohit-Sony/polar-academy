@@ -48,10 +48,10 @@ export default function Navbar() {
           <Image
             src={scrolled ? "/images/demo-elearning-logo-black.svg" : "/images/demo-elearning-logo-white.svg"}
             alt="EduLearn"
-            width={140}
-            height={36}
+            width={160}
+            height={44}
             priority
-            className="h-8 w-auto"
+            className="w-[140px] md:w-[160px] h-auto object-contain"
           />
         </Link>
 
@@ -128,7 +128,7 @@ export default function Navbar() {
           {/* CTA */}
           <Link
             href="#courses"
-            className="btn-yellow text-sm"
+            className="btn-yellow text-sm whitespace-nowrap"
           >
             Get started
           </Link>

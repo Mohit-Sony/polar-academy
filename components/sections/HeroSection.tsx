@@ -12,21 +12,17 @@ export default function HeroSection() {
       </div>
 
       {/* 2. Left 'O' Shape (Thick Ring) */}
-      <div className="absolute top-[5%] left-[-15%] w-[600px] h-[600px] z-0 pointer-events-none opacity-40">
+      <div className="absolute top-[10%] left-[-200px] w-[600px] h-[600px] z-0 pointer-events-none opacity-20">
         <svg viewBox="0 0 600 600" fill="none" className="w-full h-full">
           <circle cx="300" cy="300" r="220" stroke="#125941" strokeWidth="100" />
         </svg>
       </div>
 
-      {/* 3. Center 'O' Shape (Large Thick Ring) */}
-      <div className="absolute top-[10%] left-[15%] w-[800px] h-[800px] z-0 pointer-events-none opacity-80">
-        <svg viewBox="0 0 800 800" fill="none" className="w-full h-full">
-          <circle cx="400" cy="400" r="300" stroke="#0B4835" strokeWidth="160" />
-        </svg>
-      </div>
+      {/* 3. Center Right Large Green Circle */}
+      <div className="absolute top-[15%] right-0 w-[700px] h-[700px] rounded-full bg-[#0d4f3b] z-0 pointer-events-none opacity-60 translate-x-[20%]"></div>
 
       {/* 4. Right Yellow 'O' Shape (Thick Ring) */}
-      <div className="absolute top-[20%] right-[-10%] w-[500px] h-[500px] z-0 pointer-events-none animate-float" style={{ animationDuration: '6s', animationDelay: '1s' }}>
+      <div className="absolute top-[20%] right-[-250px] w-[500px] h-[500px] z-0 pointer-events-none animate-float" style={{ animationDuration: '6s', animationDelay: '1s' }}>
         <svg viewBox="0 0 500 500" fill="none" className="w-full h-full">
           <circle cx="250" cy="250" r="170" stroke="url(#yellow_grad)" strokeWidth="140" />
           <defs>
@@ -48,12 +44,9 @@ export default function HeroSection() {
         
         {/* Left: Text Content */}
         <div className="max-w-xl">
-          <h1 className="text-white mb-8 leading-[1.1] animate-fadeInUp font-semibold tracking-tight text-5xl md:text-6xl lg:text-[4.5rem]">
+          <h1 className="mb-8 leading-[1.1] animate-fadeInUp font-bold tracking-tight text-5xl md:text-6xl lg:text-[4.8rem]" style={{ color: '#FFFFFF' }}>
             Best online <br />
-            platform <span className="relative inline-block mx-2">
-              <span className="absolute inset-0 bg-[#83a6cb]/80 -z-10 rounded-[3px] scale-[1.15] translate-y-1"></span>
-              <span className="relative z-10 text-white">for</span>
-            </span> <br />
+            platform for <br />
             education.
           </h1>
 
@@ -62,7 +55,7 @@ export default function HeroSection() {
           </p>
 
           <div className="flex flex-wrap items-center gap-6 mb-16 animate-fadeInUp" style={{ animationDelay: '0.2s' }}>
-            <Link href="#courses" className="btn-yellow px-8 py-3.5 rounded-full text-[#073A2A] font-semibold hover:bg-white hover:border-white transition-all shadow-lg hover:shadow-xl">
+            <Link href="#courses" className="btn-yellow px-8 py-3.5 !rounded-full text-[#073A2A] font-bold hover:bg-white hover:border-white transition-all shadow-lg hover:shadow-xl">
               <svg className="w-5 h-5 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 10h4.764a2 2 0 011.789 2.894l-3.5 7A2 2 0 0115.263 21h-4.017c-.163 0-.326-.02-.485-.06L7 20m7-10V5a2 2 0 00-2-2h-.095c-.5 0-.905.405-.905.905 0 .714-.211 1.412-.608 2.006L7 11v9m7-10h-2M7 20H5a2 2 0 01-2-2v-6a2 2 0 012-2h2.514" />
               </svg>
@@ -99,15 +92,15 @@ export default function HeroSection() {
         </div>
 
         {/* Right: Hero Image */}
-        <div className="relative hidden lg:flex items-end justify-center h-full animate-fadeInUp" style={{ animationDelay: '0.2s' }}>
-          <div className="relative w-[550px] h-[650px] z-10 bottom-[-40px]">
+        <div className="relative hidden lg:flex items-end justify-end h-[600px] w-full animate-fadeInUp" style={{ animationDelay: '0.2s' }}>
+          <div className="absolute top-1/2 right-0 -translate-y-1/2 w-[130%] max-w-[850px] h-[110%] z-10 pointer-events-none translate-x-[10%]">
             <Image
               src="/images/demo-elearning-hero-banner-01.webp"
               alt="Student"
               fill
               className="object-contain object-bottom"
               priority
-              sizes="(max-width: 1024px) 100vw, 550px"
+              sizes="(max-width: 1024px) 100vw, 850px"
             />
           </div>
         </div>

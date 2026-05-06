@@ -28,6 +28,8 @@ export const metadata: Metadata = {
   },
 };
 
+import SplashScreen from "@/components/layout/SplashScreen";
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -39,6 +41,7 @@ export default function RootLayout({
       className={`${inter.variable} ${spaceGrotesk.variable}`}
     >
       <body className="min-h-screen flex flex-col antialiased">
+        <SplashScreen />
         {children}
       </body>
     </html>
