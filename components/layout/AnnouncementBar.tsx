@@ -2,10 +2,21 @@
 
 import { useState } from "react";
 
-export default function AnnouncementBar() {
-  const [visible, setVisible] = useState(true);
+interface AnnouncementBarProps {
+  visible?: boolean;
+  onClose?: () => void;
+}
 
-  if (!visible) return null;
+export default function AnnouncementBar({ visible = true, onClose }: AnnouncementBarProps) {
+  const [internalVisible, setInternalVisible] = useState(true);
+
+  const isVisible = onClose ? visible : internalVisible;
+  const handleClose = () => {
+    if (onClose) onClose();
+    else setInternalVisible(false);
+  };
+
+  if (!isVisible) return null;
 
   const text = "✦  56+ Pre-built websites now available  ✦  New courses added every week  ✦  Get 30% off your first course  ✦  Join 17 million learners worldwide  ✦  Certified instructors from top universities  ✦  56+ Pre-built websites now available  ✦  New courses added every week  ✦  Get 30% off your first course  ✦  Join 17 million learners worldwide  ✦  Certified instructors from top universities";
 
@@ -16,7 +27,7 @@ export default function AnnouncementBar() {
       aria-label="Announcement"
     >
       <div className="flex whitespace-nowrap">
-        <div className="flex animate-marquee">
+        <div className="flex w-max animate-marquee">
           <span className="text-xs font-medium tracking-wide text-slate-300 pr-12">{text}</span>
           <span className="text-xs font-medium tracking-wide text-slate-300 pr-12">{text}</span>
         </div>
@@ -24,7 +35,7 @@ export default function AnnouncementBar() {
 
       {/* Close button */}
       <button
-        onClick={() => setVisible(false)}
+        onClick={handleClose}
         className="absolute right-3 top-1/2 -translate-y-1/2 text-white/60 hover:text-white transition-colors p-1"
         aria-label="Close announcement"
       >

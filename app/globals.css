@@ -6,14 +6,14 @@
 /* ─── Design Tokens (Polar JEE Academy) ──────────────────────────────────── */
 :root {
   /* Relaxing Modern Cool Tones */
-  --color-primary: #ea580c; /* Tailwind orange-600 */
+  --color-primary: #fdba74; /* Tailwind orange-300 */
   --color-secondary: #0f172a; /* Tailwind slate-900 (bluish cool dark tone) */
   --color-text: #475569; /* Tailwind slate-600 */
   --color-white: #FFFFFF;
   --color-light-bg: #f8fafc; /* Tailwind slate-50 */
   --color-mint-bg: #f1f5f9; /* Tailwind slate-100 */
   --color-border: #e2e8f0; /* Tailwind slate-200 */
-  --color-orange: #ea580c; /* Tailwind orange-600 */
+  --color-orange: #fdba74; /* Tailwind orange-300 */
   --color-dark-text: #0f172a; /* Tailwind slate-900 */
 
   --font-body: 'Inter', sans-serif;

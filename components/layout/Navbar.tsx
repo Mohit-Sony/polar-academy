@@ -3,30 +3,27 @@
 import { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import AnnouncementBar from "./AnnouncementBar";
 
-const navLinks = [
-  { label: "Home", href: "/" },
-  { label: "About", href: "#about" },
-  {
-    label: "Courses",
-    href: "#courses",
-    dropdown: [
-      { label: "Development", sub: "Develop professional skills", href: "#" },
-      { label: "Business", sub: "Advance your business", href: "#" },
-      { label: "Design", sub: "Design skills & concepts", href: "#" },
-      { label: "Marketing", sub: "New age marketing skills", href: "#" },
-    ],
-  },
-  { label: "Instructors", href: "#" },
-  { label: "Testimonial", href: "#testimonials" },
-  { label: "Blog", href: "#blog" },
+type NavLink = {
+  label: string;
+  href: string;
+  dropdown?: { label: string; sub: string; href: string }[];
+};
+
+const navLinks: NavLink[] = [
+  { label: "Courses", href: "#courses" },
+  { label: "Test Series", href: "#test-series" },
+  { label: "Admission", href: "#admission" },
   { label: "Contact", href: "#contact" },
+  { label: "Admission Enquiry", href: "#enquiry" },
 ];
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
+  const [announcementVisible, setAnnouncementVisible] = useState(true);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 60);
@@ -35,11 +32,15 @@ export default function Navbar() {
   }, []);
 
   return (
-    <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-white shadow-[0_2px_30px_rgba(0,0,0,0.08)] ${
-        scrolled ? "py-3" : "py-5"
-      }`}
-    >
+    <>
+      <AnnouncementBar visible={announcementVisible} onClose={() => setAnnouncementVisible(false)} />
+      <header
+        className={`fixed left-0 right-0 z-50 transition-all duration-300 ${
+          scrolled 
+            ? "top-0 bg-white shadow-[0_2px_30px_rgba(0,0,0,0.08)] py-3" 
+            : `bg-transparent py-5 ${announcementVisible ? 'top-[36px]' : 'top-0'}`
+        }`}
+      >
       <div className="container-xl flex items-center justify-between gap-6">
         {/* Logo */}
         <Link href="/" className="flex-shrink-0" aria-label="EduLearn home">
@@ -49,7 +50,7 @@ export default function Navbar() {
             width={160}
             height={44}
             priority
-            className="w-[140px] md:w-[160px] h-auto object-contain"
+            className="w-[140px] md:w-[160px] h-auto object-contain rounded-md"
           />
         </Link>
 
@@ -64,7 +65,9 @@ export default function Navbar() {
             >
               <Link
                 href={link.href}
-                className="flex items-center gap-1 px-3 py-2 text-sm font-semibold rounded-md transition-colors duration-200 text-slate-700 hover:text-slate-900"
+                className={`flex items-center gap-1 px-3 py-2 text-lg font-[family-name:var(--font-chopin)] font-normal rounded-md transition-colors duration-200 ${
+                  scrolled ? "!text-slate-900 hover:!text-slate-700" : "!text-white hover:!text-slate-200"
+                }`}
               >
                 {link.label}
                 {link.dropdown && (
@@ -113,7 +116,9 @@ export default function Navbar() {
           {/* Phone */}
           <a
             href="tel:18002220000"
-            className="flex items-center gap-2 text-sm font-semibold transition-colors duration-200 text-slate-700 hover:text-slate-900"
+            className={`flex items-center gap-2 text-sm font-semibold transition-colors duration-200 ${
+              scrolled ? "!text-slate-900 hover:!text-slate-700" : "!text-white hover:!text-slate-200"
+            }`}
           >
             <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
               <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z" />
@@ -121,15 +126,7 @@ export default function Navbar() {
             1 800 222 000
           </a>
 
-          {/* Search */}
-          <button
-            className="transition-colors duration-200 text-slate-700 hover:text-slate-900"
-            aria-label="Search"
-          >
-            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
-            </svg>
-          </button>
+
 
           {/* CTA */}
           <Link
@@ -142,7 +139,7 @@ export default function Navbar() {
 
         {/* Mobile Hamburger */}
         <button
-          className="lg:hidden p-2 transition-colors text-slate-800"
+          className={`lg:hidden p-2 transition-colors ${scrolled ? "text-slate-800" : "text-white"}`}
           onClick={() => setMobileOpen(!mobileOpen)}
           aria-label="Toggle menu"
           aria-expanded={mobileOpen}
@@ -167,7 +164,7 @@ export default function Navbar() {
               <div key={link.label}>
                 <Link
                   href={link.href}
-                  className="block px-4 py-3 text-sm font-semibold text-slate-800 hover:bg-slate-50 rounded-lg transition-colors"
+                  className="block px-4 py-3 text-lg font-[family-name:var(--font-chopin)] font-normal text-slate-800 hover:bg-slate-50 rounded-lg transition-colors"
                   onClick={() => setMobileOpen(false)}
                 >
                   {link.label}
@@ -212,5 +209,6 @@ export default function Navbar() {
         </div>
       )}
     </header>
+    </>
   );
 }
