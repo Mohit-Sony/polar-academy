@@ -63,7 +63,7 @@ export default function HeroSection() {
       <div className="absolute top-[15%] right-0 w-[700px] h-[700px] rounded-full bg-white/5 z-0 pointer-events-none opacity-60 translate-x-[20%]"></div>
 
       {/* 4. Right Saffron 'O' Shape (Thick Ring) */}
-      <div className="absolute top-[20%] right-[-250px] w-[500px] h-[500px] z-0 pointer-events-none animate-float" style={{ animationDuration: '6s', animationDelay: '1s' }}>
+      <div className="absolute top-[20%] right-[-250px] w-[500px] h-[500px] z-0 pointer-events-none animate-float opacity-20" style={{ animationDuration: '6s', animationDelay: '1s' }}>
         <svg viewBox="0 0 500 500" fill="none" className="w-full h-full">
           <circle cx="250" cy="250" r="170" stroke="url(#saffron_grad)" strokeWidth="140" />
           <defs>

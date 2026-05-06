@@ -29,13 +29,14 @@ export const metadata: Metadata = {
     "Join Kautilya IIT Academy in Sikar for top-quality IIT JEE coaching. Learn from expert teachers, get the best study materials, and achieve success in JEE Main & Advanced.",
   keywords: "Kautilya IIT Academy, IIT JEE coaching Sikar, best IIT coaching Sikar, JEE Main coaching, JEE Advanced coaching",
   icons: {
-    icon: '/icon.png',
-    apple: '/apple-icon.png',
+    icon: '/icon.jpeg',
+    apple: '/apple-icon.jpeg',
   },
   openGraph: {
     title: "Kautilya IIT Academy - Best IIT JEE Coaching in Sikar",
     description: "Join Kautilya IIT Academy in Sikar for top-quality IIT JEE coaching. Achieve success in JEE Main & Advanced.",
     type: "website",
+    images: ['/icon.jpeg'],
   },
 };
 
