@@ -14,7 +14,7 @@ const footerLinks = [
 export default function Footer() {
   return (
     <footer
-      className="relative bg-[#313E3B] text-white pt-16 pb-8"
+      className="relative bg-slate-900 text-white pt-16 pb-8"
       style={{
         backgroundImage: "url('/images/demo-elearning-footer-bg.webp')",
         backgroundSize: "cover",
@@ -23,20 +23,22 @@ export default function Footer() {
       }}
     >
       {/* Overlay */}
-      <div className="absolute inset-0 bg-[#313E3B]/92" />
+      <div className="absolute inset-0 bg-slate-900/95" />
 
       <div className="relative container-xl">
         {/* Top row — Logo + Nav */}
         <div className="flex flex-col md:flex-row items-center justify-between gap-8 pb-10 border-b border-white/10">
           {/* Logo */}
-          <Link href="/" aria-label="EduLearn home">
-            <Image
-              src="/images/demo-elearning-logo-white.svg"
-              alt="EduLearn"
-              width={140}
-              height={36}
-              className="h-8 w-auto"
-            />
+          <Link href="/" aria-label="Polar JEE Academy home">
+            <div className="bg-white px-4 py-2 rounded-lg inline-block">
+              <Image
+                src="/images/logo-polar.png"
+                alt="Polar JEE Academy"
+                width={140}
+                height={36}
+                className="h-8 w-auto object-contain"
+              />
+            </div>
           </Link>
 
           {/* Nav links */}
@@ -45,7 +47,7 @@ export default function Footer() {
               <Link
                 key={link.label}
                 href={link.href}
-                className="text-sm text-white/70 hover:text-[#D5D52B] transition-colors duration-200 font-medium"
+                className="text-sm text-slate-300 hover:text-white transition-colors duration-200 font-medium"
               >
                 {link.label}
               </Link>
@@ -63,7 +65,7 @@ export default function Footer() {
               <a
                 key={social.label}
                 href="#"
-                className="w-9 h-9 rounded-full border border-white/20 flex items-center justify-center text-white/60 hover:text-[#D5D52B] hover:border-[#D5D52B] transition-all duration-200"
+                className="w-9 h-9 rounded-full border border-slate-700 flex items-center justify-center text-slate-400 hover:text-white hover:border-slate-500 transition-all duration-200"
                 aria-label={social.label}
               >
                 <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={1.5}>
@@ -76,18 +78,18 @@ export default function Footer() {
 
         {/* Bottom row — Copyright + Privacy */}
         <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4">
-          <p className="text-sm text-white/50">
-            © 2026 EduLearn. All rights reserved. Powered by{" "}
-            <a href="#" className="text-[#D5D52B] hover:underline">ThemeZaa</a>.
+          <p className="text-sm text-slate-400">
+            © 2026 Polar JEE Academy. All rights reserved. Powered by{" "}
+            <a href="#" className="text-slate-300 hover:text-white transition-colors">Polar</a>.
           </p>
           <div className="flex items-center gap-6">
-            <a href="#" className="text-sm text-white/50 hover:text-[#D5D52B] transition-colors flex items-center gap-1.5">
+            <a href="#" className="text-sm text-slate-400 hover:text-white transition-colors flex items-center gap-1.5">
               <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
               </svg>
               Protecting your privacy
             </a>
-            <a href="#" className="text-sm text-white/50 hover:text-[#D5D52B] transition-colors">Terms of Service</a>
+            <a href="#" className="text-sm text-slate-400 hover:text-white transition-colors">Terms of Service</a>
           </div>
         </div>
       </div>

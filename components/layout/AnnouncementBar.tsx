@@ -11,14 +11,14 @@ export default function AnnouncementBar() {
 
   return (
     <div
-      className="relative bg-[#313E3B] text-white overflow-hidden py-2.5"
+      className="relative bg-slate-900 text-white overflow-hidden py-2.5"
       role="banner"
       aria-label="Announcement"
     >
       <div className="flex whitespace-nowrap">
         <div className="flex animate-marquee">
-          <span className="text-xs font-medium tracking-wide text-[#D5D52B] pr-12">{text}</span>
-          <span className="text-xs font-medium tracking-wide text-[#D5D52B] pr-12">{text}</span>
+          <span className="text-xs font-medium tracking-wide text-slate-300 pr-12">{text}</span>
+          <span className="text-xs font-medium tracking-wide text-slate-300 pr-12">{text}</span>
         </div>
       </div>
 

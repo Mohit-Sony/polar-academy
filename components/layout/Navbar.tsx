@@ -36,18 +36,16 @@ export default function Navbar() {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled
-          ? "bg-white shadow-[0_2px_30px_rgba(0,0,0,0.08)] py-3"
-          : "bg-transparent py-5"
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-white shadow-[0_2px_30px_rgba(0,0,0,0.08)] ${
+        scrolled ? "py-3" : "py-5"
       }`}
     >
       <div className="container-xl flex items-center justify-between gap-6">
         {/* Logo */}
         <Link href="/" className="flex-shrink-0" aria-label="EduLearn home">
           <Image
-            src={scrolled ? "/images/demo-elearning-logo-black.svg" : "/images/demo-elearning-logo-white.svg"}
-            alt="EduLearn"
+            src="/images/logo-polar.png"
+            alt="Polar JEE Academy"
             width={160}
             height={44}
             priority
@@ -66,11 +64,7 @@ export default function Navbar() {
             >
               <Link
                 href={link.href}
-                className={`flex items-center gap-1 px-3 py-2 text-sm font-semibold rounded-md transition-colors duration-200 ${
-                  scrolled
-                    ? "text-[#313E3B] hover:text-[#D5D52B]"
-                    : "text-white hover:text-[#D5D52B]"
-                }`}
+                className="flex items-center gap-1 px-3 py-2 text-sm font-semibold rounded-md transition-colors duration-200 text-slate-700 hover:text-slate-900"
               >
                 {link.label}
                 {link.dropdown && (
@@ -85,12 +79,12 @@ export default function Navbar() {
                 <div className="nav-dropdown">
                   {link.dropdown.map((item) => (
                     <Link key={item.label} href={item.href} className="nav-dropdown-item">
-                      <div className="w-8 h-8 bg-[#F3F8F8] rounded-md flex items-center justify-center flex-shrink-0">
-                        <div className="w-2.5 h-2.5 bg-[#D5D52B] rounded-full" />
+                      <div className="w-8 h-8 bg-slate-100 rounded-md flex items-center justify-center flex-shrink-0">
+                        <div className="w-2.5 h-2.5 bg-orange-300 rounded-full" />
                       </div>
                       <div>
-                        <p className="text-sm font-semibold text-[#313E3B]">{item.label}</p>
-                        <p className="text-xs text-[#828C8A]">{item.sub}</p>
+                        <p className="text-sm font-semibold text-slate-900">{item.label}</p>
+                        <p className="text-xs text-slate-500">{item.sub}</p>
                       </div>
                     </Link>
                   ))}
@@ -105,9 +99,7 @@ export default function Navbar() {
           {/* Phone */}
           <a
             href="tel:18002220000"
-            className={`flex items-center gap-2 text-sm font-semibold transition-colors duration-200 ${
-              scrolled ? "text-[#313E3B] hover:text-[#D5D52B]" : "text-white hover:text-[#D5D52B]"
-            }`}
+            className="flex items-center gap-2 text-sm font-semibold transition-colors duration-200 text-slate-700 hover:text-slate-900"
           >
             <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
               <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z" />
@@ -117,7 +109,7 @@ export default function Navbar() {
 
           {/* Search */}
           <button
-            className={`transition-colors duration-200 ${scrolled ? "text-[#313E3B] hover:text-[#D5D52B]" : "text-white hover:text-[#D5D52B]"}`}
+            className="transition-colors duration-200 text-slate-700 hover:text-slate-900"
             aria-label="Search"
           >
             <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -136,7 +128,7 @@ export default function Navbar() {
 
         {/* Mobile Hamburger */}
         <button
-          className={`lg:hidden p-2 transition-colors ${scrolled ? "text-[#313E3B]" : "text-white"}`}
+          className="lg:hidden p-2 transition-colors text-slate-800"
           onClick={() => setMobileOpen(!mobileOpen)}
           aria-label="Toggle menu"
           aria-expanded={mobileOpen}
@@ -155,24 +147,24 @@ export default function Navbar() {
 
       {/* Mobile Menu */}
       {mobileOpen && (
-        <div className="lg:hidden bg-white border-t border-[#E4E4E4] shadow-lg">
+        <div className="lg:hidden bg-white border-t border-slate-200 shadow-lg">
           <nav className="container-xl py-4 flex flex-col gap-1">
             {navLinks.map((link) => (
               <div key={link.label}>
                 <Link
                   href={link.href}
-                  className="block px-4 py-3 text-sm font-semibold text-[#313E3B] hover:bg-[#F7F7F7] rounded-lg transition-colors"
+                  className="block px-4 py-3 text-sm font-semibold text-slate-800 hover:bg-slate-50 rounded-lg transition-colors"
                   onClick={() => setMobileOpen(false)}
                 >
                   {link.label}
                 </Link>
                 {link.dropdown && (
-                  <div className="ml-4 border-l-2 border-[#E4E4E4] pl-4 mb-2">
+                  <div className="ml-4 border-l-2 border-slate-200 pl-4 mb-2">
                     {link.dropdown.map((item) => (
                       <Link
                         key={item.label}
                         href={item.href}
-                        className="block py-2 text-sm text-[#828C8A] hover:text-[#313E3B] transition-colors"
+                        className="block py-2 text-sm text-slate-500 hover:text-slate-900 transition-colors"
                         onClick={() => setMobileOpen(false)}
                       >
                         {item.label} — {item.sub}
@@ -182,8 +174,8 @@ export default function Navbar() {
                 )}
               </div>
             ))}
-            <div className="pt-3 border-t border-[#E4E4E4] mt-2">
-              <a href="tel:18002220000" className="block px-4 py-3 text-sm font-semibold text-[#313E3B]">
+            <div className="pt-3 border-t border-slate-200 mt-2">
+              <a href="tel:18002220000" className="block px-4 py-3 text-sm font-semibold text-slate-800">
                 📞 1 800 222 000
               </a>
               <Link

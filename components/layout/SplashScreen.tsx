@@ -33,18 +33,18 @@ export default function SplashScreen() {
 
   return (
     <div
-      className={`fixed inset-0 z-[10000] bg-[#313E3B] flex items-center justify-center transition-opacity duration-500 ease-in-out ${
+      className={`fixed inset-0 z-[10000] bg-white flex items-center justify-center transition-opacity duration-500 ease-in-out ${
         isFading ? "opacity-0 pointer-events-none" : "opacity-100"
       }`}
     >
       <div className="animate-pulse">
         <Image
-          src="/images/demo-elearning-logo-white.svg"
-          alt="EduLearn"
+          src="/images/logo-polar.png"
+          alt="Polar JEE Academy"
           width={240}
           height={66}
           priority
-          className="w-[200px] md:w-[240px] h-auto object-contain"
+          className="w-[200px] md:w-[280px] h-auto object-contain"
         />
       </div>
     </div>

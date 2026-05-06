@@ -3,17 +3,18 @@
 
 @import "tailwindcss";
 
-/* ─── Design Tokens (Crafto E-Learning) ──────────────────────────────────── */
+/* ─── Design Tokens (Polar JEE Academy) ──────────────────────────────────── */
 :root {
-  --color-primary: #D5D52B;
-  --color-secondary: #313E3B;
-  --color-text: #828C8A;
+  /* Relaxing Modern Cool Tones */
+  --color-primary: #ea580c; /* Tailwind orange-600 */
+  --color-secondary: #0f172a; /* Tailwind slate-900 (bluish cool dark tone) */
+  --color-text: #475569; /* Tailwind slate-600 */
   --color-white: #FFFFFF;
-  --color-light-bg: #F7F7F7;
-  --color-mint-bg: #F3F8F8;
-  --color-border: #E4E4E4;
-  --color-orange: #EF991F;
-  --color-dark-text: #0c0d0e;
+  --color-light-bg: #f8fafc; /* Tailwind slate-50 */
+  --color-mint-bg: #f1f5f9; /* Tailwind slate-100 */
+  --color-border: #e2e8f0; /* Tailwind slate-200 */
+  --color-orange: #ea580c; /* Tailwind orange-600 */
+  --color-dark-text: #0f172a; /* Tailwind slate-900 */
 
   --font-body: 'Inter', sans-serif;
   --font-heading: 'Space Grotesk', sans-serif;
