@@ -3,48 +3,71 @@
 import { useState } from "react";
 import Image from "next/image";
 
+const boyNames = [
+  "Aarav Sharma", "Rohan Patel", "Karan Desai", "Vikram Reddy", 
+  "Rahul Kumar", "Aryan Chauhan", "Ishaan Joshi", "Kabir Das"
+];
+const girlNames = [
+  "Priya Singh", "Sneha Gupta", "Neha Verma", "Aditi Rao", 
+  "Ananya Jain", "Kavya Menon", "Riya Malhotra"
+];
+
+const fathers = [
+  "Rajesh Sharma", "Amit Singh", "Suresh Patel", "Vineet Gupta", "Sanjay Desai",
+  "Rakesh Verma", "Anil Reddy", "Prakash Rao", "Ashok Kumar", "Manoj Jain",
+  "Ravi Chauhan", "Sandeep Menon", "Tarun Joshi", "Deepak Malhotra", "Sunil Das"
+];
+
+const generateStudents = (year: string) => {
+  return Array.from({ length: 15 }).map((_, i) => {
+    const isBoy = i % 2 === 0;
+    const nameIndex = Math.floor(i / 2);
+    const name = isBoy ? boyNames[nameIndex % boyNames.length] : girlNames[nameIndex % girlNames.length];
+    const photo = isBoy ? `/images/students/m${(nameIndex % 8) + 1}.png` : `/images/students/w${(nameIndex % 8) + 1}.png`;
+    
+    return {
+      id: parseInt(year) * 100 + i,
+      name,
+      fatherName: fathers[i % fathers.length],
+      rank: `AIR ${Math.floor(Math.random() * 500) + 1}`,
+      exam: i % 2 === 0 ? "JEE Advanced" : "NEET",
+      photo,
+      with12th: i % 3 === 0,
+    };
+  });
+};
+
 const resultsData = {
-  "2024": [
-    { id: 1, name: "Aarav Sharma", rank: "AIR 15", exam: "JEE Advanced", photo: "/images/demo-elearning-01.png" },
-    { id: 2, name: "Priya Singh", rank: "AIR 42", exam: "JEE Advanced", photo: "/images/demo-elearning-03.webp" },
-    { id: 3, name: "Rohan Patel", rank: "AIR 89", exam: "JEE Main", photo: "/images/demo-elearning-04.webp" },
-    { id: 4, name: "Sneha Gupta", rank: "AIR 112", exam: "NEET", photo: "/images/demo-elearning-06.webp" },
-  ],
-  "2023": [
-    { id: 5, name: "Karan Desai", rank: "AIR 28", exam: "JEE Advanced", photo: "/images/demo-elearning-03.webp" },
-    { id: 6, name: "Neha Verma", rank: "AIR 56", exam: "JEE Main", photo: "/images/demo-elearning-06.webp" },
-    { id: 7, name: "Vikram Reddy", rank: "AIR 94", exam: "NEET", photo: "/images/demo-elearning-04.webp" },
-    { id: 8, name: "Aditi Rao", rank: "AIR 135", exam: "JEE Advanced", photo: "/images/demo-elearning-01.png" },
-  ],
+  "2024": generateStudents("2024"),
+  "2023": generateStudents("2023"),
 };
 
 export default function ResultsSection() {
   const [activeTab, setActiveTab] = useState<keyof typeof resultsData>("2024");
 
   return (
-    <section className="section-padding bg-white" id="results">
+    <section className="section-padding bg-slate-50" id="results">
       <div className="container-xl">
-        <div className="text-center mb-12">
-          <span className="section-label">Our Legacy</span>
+        <div className="mb-12">
           <h2 className="mb-4">
-            Previous Year <span className="text-orange-500">Results</span>
+            Previous Year <span className="text-orange-400">Results</span>
           </h2>
-          <p className="text-slate-600 max-w-2xl mx-auto text-lg">
+          <p className="text-slate-600 max-w-2xl text-lg">
             Celebrating the outstanding achievements of our students who have consistently
             secured top ranks in competitive exams.
           </p>
         </div>
 
         {/* Tabs */}
-        <div className="flex justify-center gap-4 mb-10">
+        <div className="flex justify-start gap-4 mb-10">
           {(Object.keys(resultsData) as Array<keyof typeof resultsData>).map((year) => (
             <button
               key={year}
               onClick={() => setActiveTab(year)}
-              className={`px-8 py-3 rounded-full font-bold text-sm transition-all duration-300 ${
+              className={`px-8 py-3.5 rounded-full font-bold text-sm transition-all shadow-sm border-2 ${
                 activeTab === year
-                  ? "bg-slate-900 text-white shadow-lg"
-                  : "bg-slate-100 text-slate-600 hover:bg-slate-200"
+                  ? "bg-orange-300 text-slate-900 border-orange-300 shadow-md"
+                  : "bg-white text-slate-600 border-slate-200 hover:border-slate-300 hover:bg-slate-50"
               }`}
             >
               Year {year}
@@ -52,32 +75,65 @@ export default function ResultsSection() {
           ))}
         </div>
 
-        {/* Grid */}
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
-          {resultsData[activeTab].map((student) => (
-            <div
-              key={student.id}
-              className="group bg-white rounded-2xl overflow-hidden border border-slate-100 shadow-sm hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1"
-            >
-              <div className="relative h-[240px] w-full bg-slate-100">
-                <Image
-                  src={student.photo}
-                  alt={student.name}
-                  fill
-                  className="object-cover group-hover:scale-105 transition-transform duration-500"
-                />
-                <div className="absolute top-4 right-4 bg-orange-500 text-white px-3 py-1 rounded-full text-xs font-bold shadow-md">
-                  {student.exam}
+        {/* Modern Cards Grid */}
+        <div className="bg-white rounded-3xl shadow-sm border border-slate-200 overflow-hidden">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-0">
+            {resultsData[activeTab].map((student) => (
+              <div
+                key={student.id}
+                className="group p-4 hover:shadow-[0_8px_30px_rgb(0,0,0,0.08)] hover:z-10 transition-all duration-300 flex flex-col relative bg-white"
+              >
+                {/* Image Container */}
+                <div className="relative w-full aspect-[4/5] rounded-2xl overflow-hidden bg-slate-900 mb-4 group-hover:bg-slate-800 transition-colors duration-500">
+                  {/* Theme matching glow behind the person */}
+                  <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-2/3 h-2/3 bg-orange-400/20 blur-2xl rounded-full z-0 group-hover:bg-orange-400/30 transition-colors duration-500"></div>
+
+                  {student.with12th && (
+                    <div className="absolute top-3 right-3 bg-white/10 backdrop-blur-md text-white px-2.5 py-1 rounded-lg text-[10px] font-bold tracking-wide uppercase z-20 shadow-sm border border-white/20 flex items-center gap-1.5">
+                      <span className="w-1.5 h-1.5 rounded-full bg-orange-400 animate-pulse"></span>
+                      With 12th
+                    </div>
+                  )}
+                  
+                  {/* Image wrapper with top padding to zoom out */}
+                  <div className="absolute inset-x-0 bottom-0 top-4 z-10">
+                    <Image
+                      src={student.photo}
+                      alt={student.name}
+                      fill
+                      className="object-contain object-bottom group-hover:scale-105 transition-transform duration-700 ease-out drop-shadow-2xl"
+                    />
+                  </div>
+                </div>
+                
+                {/* Content */}
+                <div className="px-1 pb-1 flex-grow flex flex-col">
+                  <div className="flex items-center gap-2 mb-1.5">
+                    <h3 className="text-xl font-bold text-slate-900 leading-tight">{student.name}</h3>
+                    <svg className="w-5 h-5 text-emerald-500 shrink-0" viewBox="0 0 20 20" fill="currentColor">
+                      <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z" clipRule="evenodd" />
+                    </svg>
+                  </div>
+                  
+                  <p className="text-sm text-slate-500 mb-5 font-medium line-clamp-2">
+                    D/o {student.fatherName}
+                  </p>
+                  
+                  {/* Bottom Row */}
+                  <div className="flex items-center justify-between pt-4 border-t border-slate-100 mt-auto">
+                    <div className="flex items-center gap-1.5 text-slate-600 font-bold text-sm">
+                      <svg className="w-4 h-4 text-orange-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+                      {student.exam}
+                    </div>
+                    
+                    <div className="bg-slate-900 text-white px-4 py-1.5 rounded-full text-xs font-bold shadow-md group-hover:bg-orange-400 group-hover:text-slate-900 transition-colors duration-300">
+                      {student.rank}
+                    </div>
+                  </div>
                 </div>
               </div>
-              <div className="p-6 text-center">
-                <h3 className="text-xl font-bold text-slate-900 mb-1">{student.name}</h3>
-                <div className="inline-block bg-green-100 text-green-700 px-4 py-1.5 rounded-full text-sm font-bold">
-                  Rank: {student.rank}
-                </div>
-              </div>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
       </div>
     </section>
