@@ -6,6 +6,7 @@ import FeaturesSection from "@/components/sections/FeaturesSection";
 import CoursesSection from "@/components/sections/CoursesSection";
 import TeamSection from "@/components/sections/TeamSection";
 import WhyChooseUs from "@/components/sections/WhyChooseUs";
+import FAQSection from "@/components/sections/FAQSection";
 import CTABanner from "@/components/sections/CTABanner";
 
 export default function Home() {
@@ -19,7 +20,9 @@ export default function Home() {
         <CoursesSection />
         <TeamSection />
         {/* <WhyChooseUs /> */}
+
         <CTABanner />
+                <FAQSection />
       </main>
       <Footer />
     </>

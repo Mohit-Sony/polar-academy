@@ -1,6 +1,5 @@
 "use client";
 
-import { useState } from "react";
 import { FAQ } from "@/data/faq";
 
 interface AccordionItemProps {
@@ -11,7 +10,7 @@ interface AccordionItemProps {
 
 export default function AccordionItem({ faq, isOpen, onToggle }: AccordionItemProps) {
   return (
-    <div className="border-b border-[#E4E4E4] last:border-b-0">
+    <div className="border-b border-slate-200 last:border-b-0">
       <button
         className="w-full flex items-center justify-between gap-4 py-5 text-left cursor-pointer group"
         onClick={onToggle}
@@ -21,7 +20,7 @@ export default function AccordionItem({ faq, isOpen, onToggle }: AccordionItemPr
       >
         <span
           className={`text-base font-semibold transition-colors duration-200 ${
-            isOpen ? "text-[#D5D52B]" : "text-[#313E3B] group-hover:text-[#313E3B]"
+            isOpen ? "text-orange-500" : "text-slate-900 group-hover:text-orange-400"
           }`}
         >
           {faq.question}
@@ -29,12 +28,12 @@ export default function AccordionItem({ faq, isOpen, onToggle }: AccordionItemPr
         <span
           className={`flex-shrink-0 w-8 h-8 rounded-full flex items-center justify-center transition-all duration-300 ${
             isOpen
-              ? "bg-[#313E3B] rotate-45"
-              : "bg-[#F7F7F7] rotate-0 group-hover:bg-[#E4E4E4]"
+              ? "bg-orange-500 rotate-45 text-white shadow-md"
+              : "bg-slate-100 rotate-0 text-slate-500 group-hover:bg-slate-200"
           }`}
         >
           <svg
-            className={`w-4 h-4 transition-colors ${isOpen ? "text-white" : "text-[#313E3B]"}`}
+            className="w-4 h-4 transition-colors"
             fill="none"
             stroke="currentColor"
             viewBox="0 0 24 24"
@@ -50,7 +49,7 @@ export default function AccordionItem({ faq, isOpen, onToggle }: AccordionItemPr
         aria-labelledby={`faq-btn-${faq.id}`}
         className={`accordion-content ${isOpen ? "open" : ""}`}
       >
-        <p className="pb-5 text-[#828C8A] leading-relaxed">{faq.answer}</p>
+        <p className="pb-5 text-slate-600 leading-relaxed text-sm md:text-base pr-8">{faq.answer}</p>
       </div>
     </div>
   );

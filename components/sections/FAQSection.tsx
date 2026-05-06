@@ -3,6 +3,7 @@
 import { useState } from "react";
 import AccordionItem from "@/components/ui/AccordionItem";
 import { faqs } from "@/data/faq";
+import { Phone, Mail } from "lucide-react";
 
 export default function FAQSection() {
   const [openId, setOpenId] = useState<number | null>(1);
@@ -10,48 +11,46 @@ export default function FAQSection() {
   const toggle = (id: number) => setOpenId(openId === id ? null : id);
 
   return (
-    <section className="section-padding bg-white" id="faq">
+    <section className="py-24 bg-white" id="faq">
       <div className="container-xl">
         <div className="grid lg:grid-cols-2 gap-16 items-start">
           {/* Left — Heading */}
           <div className="lg:sticky lg:top-28">
-            <span className="section-label">Have questions?</span>
-            <h2 className="mb-6">
+            <div className="inline-flex items-center gap-2 bg-slate-100 text-slate-600 border border-slate-200 px-4 py-2 rounded-full text-xs font-bold uppercase tracking-widest mb-6">
+              Have questions?
+            </div>
+            
+            <h2 className="mb-6 text-3xl md:text-[2.5rem] leading-tight font-extrabold text-slate-900 tracking-tight">
               Frequently asked{" "}
-              <span className="text-[#D5D52B]">questions.</span>
+              <span className="text-orange-500">questions.</span>
             </h2>
-            <p className="text-[#828C8A] leading-relaxed mb-8">
-              Can&apos;t find the answer you&apos;re looking for? Our friendly support team is
-              here to help. Reach out via live chat, email, or phone and we&apos;ll get
-              back to you within 24 hours.
+            <p className="text-slate-500 leading-relaxed mb-10 text-lg">
+              Can&apos;t find the answer you&apos;re looking for? Our friendly support team at Polar Academy is
+              here to help you make the right choice for your preparation.
             </p>
 
             {/* Contact options */}
             <div className="space-y-4">
-              <div className="flex items-center gap-4 p-4 bg-[#F7F7F7] rounded-xl">
-                <div className="w-10 h-10 bg-[#313E3B] text-[#D5D52B] rounded-lg flex items-center justify-center flex-shrink-0">
-                  <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-                    <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z" />
-                  </svg>
+              <div className="flex items-center gap-5 p-5 bg-slate-50 rounded-2xl border border-slate-100 hover:border-orange-200 hover:bg-orange-50/30 transition-all group">
+                <div className="w-12 h-12 bg-slate-900 text-white rounded-xl flex items-center justify-center flex-shrink-0 group-hover:bg-orange-500 transition-colors shadow-md">
+                  <Phone size={20} />
                 </div>
                 <div>
-                  <p className="text-xs text-[#828C8A] font-medium mb-0.5">Call us directly?</p>
-                  <a href="tel:+12345678910" className="text-sm font-bold text-[#313E3B] hover:text-[#D5D52B] transition-colors">
-                    +1 234 567 8910
+                  <p className="text-xs text-slate-500 font-bold uppercase tracking-wider mb-1">Call us directly</p>
+                  <a href="tel:+919876543210" className="text-lg font-bold text-slate-900 group-hover:text-orange-500 transition-colors">
+                    +91 98765 43210
                   </a>
                 </div>
               </div>
 
-              <div className="flex items-center gap-4 p-4 bg-[#F7F7F7] rounded-xl">
-                <div className="w-10 h-10 bg-[#313E3B] text-[#D5D52B] rounded-lg flex items-center justify-center flex-shrink-0">
-                  <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-                  </svg>
+              <div className="flex items-center gap-5 p-5 bg-slate-50 rounded-2xl border border-slate-100 hover:border-orange-200 hover:bg-orange-50/30 transition-all group">
+                <div className="w-12 h-12 bg-slate-900 text-white rounded-xl flex items-center justify-center flex-shrink-0 group-hover:bg-orange-500 transition-colors shadow-md">
+                  <Mail size={20} />
                 </div>
                 <div>
-                  <p className="text-xs text-[#828C8A] font-medium mb-0.5">Need support?</p>
-                  <a href="mailto:hello@edulearn.com" className="text-sm font-bold text-[#313E3B] hover:text-[#D5D52B] transition-colors">
-                    hello@edulearn.com
+                  <p className="text-xs text-slate-500 font-bold uppercase tracking-wider mb-1">Need support?</p>
+                  <a href="mailto:hello@polaracademy.com" className="text-lg font-bold text-slate-900 group-hover:text-orange-500 transition-colors">
+                    hello@polaracademy.com
                   </a>
                 </div>
               </div>
@@ -59,7 +58,7 @@ export default function FAQSection() {
           </div>
 
           {/* Right — Accordion */}
-          <div className="bg-[#F7F7F7] rounded-2xl p-6 lg:p-8">
+          <div className="bg-white border border-slate-200 rounded-3xl p-6 lg:p-8 shadow-xl shadow-slate-200/40">
             {faqs.map((faq) => (
               <AccordionItem
                 key={faq.id}

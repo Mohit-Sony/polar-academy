@@ -7,32 +7,32 @@ export interface FAQ {
 export const faqs: FAQ[] = [
   {
     id: 1,
-    question: "How do I get started with an online course?",
+    question: "What foundation programs do you offer?",
     answer:
-      "Getting started is simple. Create a free account, browse our catalogue of 260+ courses, enrol in the one that fits your goals, and begin learning immediately. Courses are fully self-paced so you can start and stop as your schedule allows.",
+      "We offer comprehensive, highly structured programs: SANKALP for JEE Advanced Foundation, VIJAY for NEET Crash Course & Preparation, and LAKSHYA for robust Class 11/12 Foundation building.",
   },
   {
     id: 2,
-    question: "Are the courses accredited or certified?",
+    question: "Who will be teaching the classes?",
     answer:
-      "Yes. Upon completion of each course, you receive a verifiable certificate of completion. Many of our programs are also affiliated with industry bodies and universities, providing credentials that are recognised by employers worldwide.",
+      "Your classes will be led by our expert foundation team, including Sardar Singh Ranwa (Chemistry), Rajendra Jat (Mathematics), and Bhagwan Ram Raad (Physics). Together, they bring decades of top-tier coaching experience from Sikar.",
   },
   {
     id: 3,
-    question: "Can I learn at my own pace?",
+    question: "Are the programs offline or online?",
     answer:
-      "Absolutely. Every course on our platform is designed to be completed at your own pace. There are no fixed deadlines for self-paced courses. You can revisit lessons, rewatch video content, and work through projects on your own schedule.",
+      "We strongly believe in the power of immersive, distraction-free learning. Our primary programs are rigorous offline classroom sessions conducted at our Sikar campus, supplemented by comprehensive digital study materials for home revision.",
   },
   {
     id: 4,
-    question: "What payment methods do you accept?",
+    question: "How do you handle student doubts?",
     answer:
-      "We accept all major credit cards (Visa, MasterCard, American Express), PayPal, and bank transfers. We also offer monthly subscription plans and team pricing for organisations looking to upskill their workforce.",
+      "We maintain an optimal student-to-teacher ratio to ensure personalized attention. We conduct dedicated daily doubt-clearing counters and one-on-one mentoring sessions so no student falls behind.",
   },
   {
     id: 5,
-    question: "Is there a refund policy?",
+    question: "Do you provide study materials and test series?",
     answer:
-      "We offer a full 30-day money-back guarantee on all course purchases, no questions asked. If you're not completely satisfied with your learning experience, contact our support team within 30 days of purchase for a full refund.",
+      "Yes. Every student receives our meticulously researched study modules, Daily Practice Problems (DPPs), and access to our All-India level test series that strictly follow the latest NTA and JEE Advanced exam patterns.",
   },
 ];
