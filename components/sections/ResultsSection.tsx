@@ -77,14 +77,14 @@ export default function ResultsSection() {
 
         {/* Modern Cards Grid */}
         <div className="bg-white rounded-3xl shadow-sm border border-slate-200 overflow-hidden">
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-0">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-1 bg-slate-100">
             {resultsData[activeTab].map((student) => (
               <div
                 key={student.id}
-                className="group p-4 hover:shadow-[0_8px_30px_rgb(0,0,0,0.08)] hover:z-10 transition-all duration-300 flex flex-col relative bg-white"
+                className="group hover:shadow-[0_8px_30px_rgb(0,0,0,0.12)] hover:z-10 transition-all duration-300 flex flex-col relative bg-white"
               >
                 {/* Image Container */}
-                <div className="relative w-full aspect-[4/5] rounded-2xl overflow-hidden bg-slate-900 mb-4 group-hover:bg-slate-800 transition-colors duration-500">
+                <div className="relative w-full aspect-[4/5] overflow-hidden bg-slate-900 group-hover:bg-slate-800 transition-colors duration-500">
                   {/* Theme matching glow behind the person */}
                   <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-2/3 h-2/3 bg-orange-400/20 blur-2xl rounded-full z-0 group-hover:bg-orange-400/30 transition-colors duration-500"></div>
 
@@ -107,7 +107,7 @@ export default function ResultsSection() {
                 </div>
                 
                 {/* Content */}
-                <div className="px-1 pb-1 flex-grow flex flex-col">
+                <div className="p-4 flex-grow flex flex-col">
                   <div className="flex items-center gap-2 mb-1.5">
                     <h3 className="text-xl font-bold text-slate-900 leading-tight">{student.name}</h3>
                     <svg className="w-5 h-5 text-emerald-500 shrink-0" viewBox="0 0 20 20" fill="currentColor">
