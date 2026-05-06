@@ -24,17 +24,17 @@ const chopin = localFont({
 });
 
 export const metadata: Metadata = {
-  title: "Polar Academy | Sikar's Most Trusted JEE Foundation Program",
+  title: "Kautilya IIT Academy - Best IIT JEE Coaching in Sikar",
   description:
-    "Polar JEE Academy provides structured learning, proven methods, and exceptional results for JEE Advanced and NEET. Join our expert faculty in Sikar.",
-  keywords: "Polar Academy, JEE Foundation, NEET Preparation, Sikar Coaching, IIT JEE, Education",
+    "Join Kautilya IIT Academy in Sikar for top-quality IIT JEE coaching. Learn from expert teachers, get the best study materials, and achieve success in JEE Main & Advanced.",
+  keywords: "Kautilya IIT Academy, IIT JEE coaching Sikar, best IIT coaching Sikar, JEE Main coaching, JEE Advanced coaching",
   icons: {
     icon: '/icon.png',
     apple: '/apple-icon.png',
   },
   openGraph: {
-    title: "Polar Academy | Sikar's Most Trusted JEE Foundation Program",
-    description: "Structured learning, proven methods, and exceptional results for JEE and NEET.",
+    title: "Kautilya IIT Academy - Best IIT JEE Coaching in Sikar",
+    description: "Join Kautilya IIT Academy in Sikar for top-quality IIT JEE coaching. Achieve success in JEE Main & Advanced.",
     type: "website",
   },
 };

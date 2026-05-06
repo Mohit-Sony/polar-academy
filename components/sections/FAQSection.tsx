@@ -25,7 +25,7 @@ export default function FAQSection() {
               <span className="text-orange-500">questions.</span>
             </h2>
             <p className="text-slate-500 leading-relaxed mb-10 text-lg">
-              Can&apos;t find the answer you&apos;re looking for? Our friendly support team at Polar Academy is
+              Can&apos;t find the answer you&apos;re looking for? Our friendly support team at Kautilya IIT Academy is
               here to help you make the right choice for your preparation.
             </p>
 
@@ -37,8 +37,8 @@ export default function FAQSection() {
                 </div>
                 <div>
                   <p className="text-xs text-slate-500 font-bold uppercase tracking-wider mb-1">Call us directly</p>
-                  <a href="tel:+919876543210" className="text-lg font-bold text-slate-900 group-hover:text-orange-500 transition-colors">
-                    +91 98765 43210
+                  <a href="tel:+918875023160" className="text-lg font-bold text-slate-900 group-hover:text-orange-500 transition-colors">
+                    +91 88750 23160
                   </a>
                 </div>
               </div>
@@ -49,8 +49,8 @@ export default function FAQSection() {
                 </div>
                 <div>
                   <p className="text-xs text-slate-500 font-bold uppercase tracking-wider mb-1">Need support?</p>
-                  <a href="mailto:hello@polaracademy.com" className="text-lg font-bold text-slate-900 group-hover:text-orange-500 transition-colors">
-                    hello@polaracademy.com
+                  <a href="mailto:kiitsikar@gmail.com" className="text-lg font-bold text-slate-900 group-hover:text-orange-500 transition-colors">
+                    kiitsikar@gmail.com
                   </a>
                 </div>
               </div>

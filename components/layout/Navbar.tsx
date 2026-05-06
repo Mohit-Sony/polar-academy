@@ -12,11 +12,19 @@ type NavLink = {
 };
 
 const navLinks: NavLink[] = [
-  { label: "Courses", href: "#courses" },
+  { 
+    label: "Courses", 
+    href: "#courses",
+    dropdown: [
+      { label: "Pre-Foundation", sub: "Class VIII, IX, X", href: "#pre-foundation" },
+      { label: "Foundation", sub: "Class XI & XII", href: "#foundation" },
+      { label: "Target", sub: "Class XII Passed", href: "#target" }
+    ]
+  },
+  { label: "K SAT", href: "#k-sat" },
   { label: "Test Series", href: "#test-series" },
   { label: "Admission", href: "#admission" },
   { label: "Contact", href: "#contact" },
-  { label: "Admission Enquiry", href: "#enquiry" },
 ];
 
 export default function Navbar() {
@@ -51,13 +59,12 @@ export default function Navbar() {
       >
       <div className="container-xl flex items-center justify-between gap-6">
         {/* Logo */}
-        <Link href="/" className="flex-shrink-0" aria-label="EduLearn home">
-          <Image
-            src="/images/logo-polar.png"
-            alt="Polar JEE Academy"
-            width={160}
+        <Link href="/" className="flex-shrink-0" aria-label="Kautilya IIT Academy home">
+          <Image 
+            src="/kautilya-logo.jpg" 
+            alt="Kautilya IIT Academy Logo" 
+            width={160} 
             height={44}
-            priority
             className="w-[140px] md:w-[160px] h-auto object-contain rounded-md"
           />
         </Link>
@@ -109,7 +116,7 @@ export default function Navbar() {
         <div className="hidden lg:flex items-center gap-4">
           {/* WhatsApp */}
           <a
-            href="https://wa.me/919999999999"
+            href="https://wa.me/918875023160"
             target="_blank"
             rel="noopener noreferrer"
             className="flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-green-50 text-green-600 text-sm font-semibold transition-colors duration-200 hover:bg-green-100"
@@ -123,7 +130,7 @@ export default function Navbar() {
 
           {/* Phone */}
           <a
-            href="tel:18002220000"
+            href="tel:+918875023160"
             className={`flex items-center gap-2 text-sm font-semibold transition-colors duration-200 ${
               scrolled ? "!text-slate-900 hover:!text-slate-700" : "!text-white hover:!text-slate-200"
             }`}
@@ -131,7 +138,7 @@ export default function Navbar() {
             <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
               <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z" />
             </svg>
-            1 800 222 000
+            +91 8875023160
           </a>
 
 
@@ -167,15 +174,13 @@ export default function Navbar() {
         {/* Mobile Menu Header */}
         <div className="flex items-center justify-between px-6 py-5 border-b border-white/10">
           <Link href="/" className="flex-shrink-0" onClick={() => setMobileOpen(false)}>
-            <div className="bg-white p-1.5 rounded-md inline-block">
-              <Image
-                src="/images/logo-polar.png"
-                alt="Polar JEE Academy"
-                width={140}
-                height={38}
-                className="w-[120px] h-auto object-contain"
-              />
-            </div>
+            <Image 
+              src="/kautilya-logo.jpg" 
+              alt="Kautilya IIT Academy Logo" 
+              width={160} 
+              height={44}
+              className="w-[140px] md:w-[160px] h-auto object-contain rounded-md"
+            />
           </Link>
           <button
             className="p-2 !text-white/80 hover:!text-white transition-colors"
@@ -221,7 +226,7 @@ export default function Navbar() {
           {/* Mobile Menu Footer Actions */}
           <div className="mt-auto pt-8 flex flex-col gap-4">
             <a 
-              href="https://wa.me/919999999999" 
+              href="https://wa.me/918875023160" 
               target="_blank" 
               rel="noopener noreferrer" 
               className="flex items-center justify-center gap-2 py-3.5 rounded-xl bg-green-500/10 !text-green-400 font-semibold border border-green-500/20"
@@ -232,13 +237,13 @@ export default function Navbar() {
               WhatsApp Us
             </a>
             <a 
-              href="tel:18002220000" 
+              href="tel:+918875023160" 
               className="flex items-center justify-center gap-2 py-3.5 rounded-xl bg-white/5 !text-white font-semibold border border-white/10"
             >
               <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
                 <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z" />
               </svg>
-              1 800 222 000
+              +91 8875023160
             </a>
             <Link
               href="#courses"

@@ -13,16 +13,24 @@ export default function HeroSection() {
   useGSAP(() => {
     const tl = gsap.timeline({ defaults: { ease: "power3.out" } });
 
-    tl.from(".hero-title", 
-        { y: 50, opacity: 0, duration: 1, delay: 0.2 }
+    tl.from(".hero-badge",
+        { y: 20, opacity: 0, duration: 0.6, delay: 0.1 }
+      )
+      .from(".hero-title", 
+        { y: 50, opacity: 0, duration: 1 },
+        "-=0.3"
       )
       .from(".hero-subtitle", 
         { y: 30, opacity: 0, duration: 0.8 }, 
         "-=0.6"
       )
+      .from(".hero-social-proof",
+        { y: 20, opacity: 0, duration: 0.7 },
+        "-=0.5"
+      )
       .from(".hero-btn-group", 
         { y: 30, opacity: 0, duration: 0.8 }, 
-        "-=0.6"
+        "-=0.5"
       )
       .from(".hero-image-wrapper", 
         { x: 50, opacity: 0, duration: 1.2 }, 
@@ -34,10 +42,10 @@ export default function HeroSection() {
     <section ref={container} className="relative min-h-screen bg-slate-900 overflow-hidden pt-28 pb-10 flex flex-col justify-center">
       {/* --- BACKGROUND ELEMENTS --- */}
 
-      {/* 0. Soft Light Blue Glows for "Jolliness" */}
-      <div className="absolute top-[-20%] left-[-10%] w-[50vw] h-[50vw] rounded-full bg-blue-500/20 blur-[120px] pointer-events-none z-0"></div>
-      <div className="absolute bottom-[-20%] right-[-10%] w-[60vw] h-[60vw] rounded-full bg-cyan-400/15 blur-[140px] pointer-events-none z-0"></div>
-      <div className="absolute top-[30%] left-[40%] w-[40vw] h-[40vw] rounded-full bg-sky-500/10 blur-[100px] pointer-events-none z-0"></div>
+      {/* 0. Saffron / Orange Glows — Kautilya brand palette */}
+      <div className="absolute top-[-20%] left-[-10%] w-[50vw] h-[50vw] rounded-full bg-orange-500/15 blur-[120px] pointer-events-none z-0"></div>
+      <div className="absolute bottom-[-20%] right-[-10%] w-[60vw] h-[60vw] rounded-full bg-amber-400/10 blur-[140px] pointer-events-none z-0"></div>
+      <div className="absolute top-[30%] left-[40%] w-[40vw] h-[40vw] rounded-full bg-orange-400/8 blur-[100px] pointer-events-none z-0"></div>
 
       {/* 1. Grid Lines - Exactly 6 columns */}
       <div className="absolute inset-0 z-0 pointer-events-none grid grid-cols-6 divide-x divide-white/5">
@@ -51,25 +59,25 @@ export default function HeroSection() {
         </svg>
       </div>
 
-      {/* 3. Center Right Large Green Circle */}
+      {/* 3. Center Right Large Circle */}
       <div className="absolute top-[15%] right-0 w-[700px] h-[700px] rounded-full bg-white/5 z-0 pointer-events-none opacity-60 translate-x-[20%]"></div>
 
-      {/* 4. Right Yellow 'O' Shape (Thick Ring) */}
+      {/* 4. Right Saffron 'O' Shape (Thick Ring) */}
       <div className="absolute top-[20%] right-[-250px] w-[500px] h-[500px] z-0 pointer-events-none animate-float" style={{ animationDuration: '6s', animationDelay: '1s' }}>
         <svg viewBox="0 0 500 500" fill="none" className="w-full h-full">
-          <circle cx="250" cy="250" r="170" stroke="url(#yellow_grad)" strokeWidth="140" />
+          <circle cx="250" cy="250" r="170" stroke="url(#saffron_grad)" strokeWidth="140" />
           <defs>
-            <linearGradient id="yellow_grad" x1="0" y1="0" x2="500" y2="500" gradientUnits="userSpaceOnUse">
-              <stop stopColor="#fdba74" />
-              <stop offset="1" stopColor="#fb923c" />
+            <linearGradient id="saffron_grad" x1="0" y1="0" x2="500" y2="500" gradientUnits="userSpaceOnUse">
+              <stop stopColor="#fbbf24" />
+              <stop offset="1" stopColor="#f97316" />
             </linearGradient>
           </defs>
         </svg>
       </div>
 
-      {/* 5. Floating Yellow Dots */}
-      <div className="absolute top-[25%] left-[38%] w-2 h-2 rounded-full bg-orange-300 z-0 animate-float"></div>
-      <div className="absolute top-[20%] right-[30%] w-2.5 h-2.5 rounded-full bg-orange-300 z-0 animate-float" style={{ animationDelay: '1.5s' }}></div>
+      {/* 5. Floating Saffron Dots */}
+      <div className="absolute top-[25%] left-[38%] w-2 h-2 rounded-full bg-orange-400 z-0 animate-float"></div>
+      <div className="absolute top-[20%] right-[30%] w-2.5 h-2.5 rounded-full bg-amber-300 z-0 animate-float" style={{ animationDelay: '1.5s' }}></div>
 
 
       {/* --- CONTENT CONTAINER --- */}
@@ -77,42 +85,49 @@ export default function HeroSection() {
 
         {/* Left: Text Content */}
         <div className="max-w-xl">
+
+          {/* Social Proof Chips — IIT selections */}
+          {/* <div className="hero-social-proof flex flex-wrap gap-2 mb-6">
+            {["IIT Bombay", "IIT Delhi", "IIT Kanpur", "IIT Kharagpur", "IIT Roorkee"].map((iit) => (
+              <span
+                key={iit}
+                className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-orange-500/10 border border-orange-400/20 text-orange-300 text-xs font-semibold tracking-wide"
+              >
+                <span className="w-1.5 h-1.5 rounded-full bg-orange-400 inline-block"></span>
+                {iit}
+              </span>
+            ))}
+          </div> */}
+
           <h1 className="hero-title mb-8 leading-[1.1] font-bold tracking-tight text-5xl md:text-6xl lg:text-[4.8rem]" style={{ color: '#FFFFFF' }}>
-Sikar’s Most Trusted JEE Foundation Program
+Best IIT JEE Coaching in Sikar
           </h1>
 
-          <p className="hero-subtitle text-white/70 text-lg leading-relaxed mb-10 max-w-[440px]">
-            Structured learning. Proven methods. Exceptional results.
+          <p className="hero-subtitle text-white/70 text-lg leading-relaxed mb-10 max-w-[480px]">
+            800+ JEE Advanced qualifiers since 2018. Backed by IIT &amp; NIT alumni faculty. Trusted by thousands of Rajasthan students.
           </p>
 
-          <div className="hero-btn-group flex flex-wrap items-center gap-6 mb-16">
-            <Link href="#courses" className="btn-yellow px-8 py-3.5 !rounded-full text-slate-900 font-bold hover:bg-white hover:border-white transition-all shadow-lg hover:shadow-xl">
-              <svg className="w-5 h-5 mr-1.5" fill="currentColor" viewBox="0 0 24 24">
-                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 00-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
-              </svg>
-              Enquire Now
+          <div className="hero-btn-group flex flex-wrap items-center gap-4 mb-16">
+            {/* Primary CTA — Apply for K SAT */}
+            <Link
+              href="#k-sat"
+              className="btn-yellow px-8 py-3.5 !rounded-full text-slate-900 font-bold hover:bg-white hover:border-white transition-all shadow-lg hover:shadow-xl"
+            >
+              Apply for K SAT
             </Link>
 
-
+            {/* Secondary CTA — Explore Courses */}
+            <Link
+              href="#courses"
+              className="inline-flex items-center gap-2 px-8 py-3.5 rounded-full border border-white/25 text-white font-semibold text-sm hover:bg-white/10 hover:border-white/50 transition-all"
+            >
+              Explore Courses
+              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+              </svg>
+            </Link>
           </div>
 
-          {/* <div className="flex gap-12 md:gap-20 animate-fadeInUp" style={{ animationDelay: '0.3s' }}>
-            <div>
-              <p className="text-3xl md:text-4xl font-bold text-white font-[var(--font-heading)]">260+</p>
-              <div className="h-[2px] w-12 bg-orange-300 my-2"></div>
-              <p className="text-white/60 text-sm font-medium">Tutors</p>
-            </div>
-            <div>
-              <p className="text-3xl md:text-4xl font-bold text-white font-[var(--font-heading)]">5340+</p>
-              <div className="h-[2px] w-12 bg-orange-300 my-2"></div>
-              <p className="text-white/60 text-sm font-medium">Students</p>
-            </div>
-            <div>
-              <p className="text-3xl md:text-4xl font-bold text-white font-[var(--font-heading)]">280+</p>
-              <div className="h-[2px] w-12 bg-orange-300 my-2"></div>
-              <p className="text-white/60 text-sm font-medium">Courses</p>
-            </div>
-          </div> */}
         </div>
 
         {/* Right: Hero Image */}

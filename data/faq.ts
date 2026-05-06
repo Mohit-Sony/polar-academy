@@ -7,15 +7,15 @@ export interface FAQ {
 export const faqs: FAQ[] = [
   {
     id: 1,
-    question: "What foundation programs do you offer?",
+    question: "What programs do you offer?",
     answer:
-      "We offer comprehensive, highly structured programs: SANKALP for JEE Advanced Foundation, VIJAY for NEET Crash Course & Preparation, and LAKSHYA for robust Class 11/12 Foundation building.",
+      "We offer comprehensive, highly structured programs: PRE-FOUNDATION for Class VIII, IX, and X to solidify fundamental concepts; FOUNDATION for Class XI & XII covering school and competitive exams; and TARGET for Class XII Passed students starting from scratch with a time-bound approach.",
   },
   {
     id: 2,
     question: "Who will be teaching the classes?",
     answer:
-      "Your classes will be led by our expert foundation team, including Sardar Singh Ranwa (Chemistry), Rajendra Jat (Mathematics), and Bhagwan Ram Raad (Physics). Together, they bring decades of top-tier coaching experience from Sikar.",
+      "Your classes will be led by our expert faculty team at Kautilya IIT Academy. With decades of top-tier coaching experience, they ensure personalized attention and expert guidance.",
   },
   {
     id: 3,

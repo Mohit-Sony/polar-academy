@@ -18,7 +18,7 @@ export default function AnnouncementBar({ visible = true, onClose }: Announcemen
 
   if (!isVisible) return null;
 
-  const text = "✦  Admissions Open for JEE/NEET 2025-26  ✦  Enroll in SANKALP, VIJAY & LAKSHYA Batches  ✦  Learn from Top Faculty  ✦  Achieve Your Dream Rank  ✦  New Batches Starting Soon  ✦  Admissions Open for JEE/NEET 2025-26  ✦  Enroll in SANKALP, VIJAY & LAKSHYA Batches  ✦  Learn from Top Faculty  ✦  Achieve Your Dream Rank  ✦  New Batches Starting Soon";
+  const text = "✦  Admissions Open for JEE/NEET 2025-26  ✦  Enroll in PRE-FOUNDATION, FOUNDATION & TARGET Batches  ✦  Register for K SAT (Kautilya Scholarship and Admission Test)  ✦  Learn from Top Faculty  ✦  Achieve Your Dream Rank  ✦  Admissions Open for JEE/NEET 2025-26  ✦  Enroll in PRE-FOUNDATION, FOUNDATION & TARGET Batches  ✦  Register for K SAT (Kautilya Scholarship and Admission Test)  ✦  Learn from Top Faculty  ✦  Achieve Your Dream Rank";
 
   return (
     <div

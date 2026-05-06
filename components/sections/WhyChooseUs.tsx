@@ -28,7 +28,7 @@ export default function WhyChooseUs() {
           {/* Left — Text */}
           <div>
             <span className="inline-block text-xs font-bold uppercase tracking-[0.2em] text-cyan-400 mb-4">
-              Why Choose Polar JEE Academy?
+              Why Choose Kautilya IIT Academy?
             </span>
             <h2 className="text-3xl md:text-[2.5rem] font-extrabold text-white mb-6 leading-tight tracking-tight">
               Your Pathway to <span className="text-cyan-400">Top Engineering & Medical Colleges.</span>

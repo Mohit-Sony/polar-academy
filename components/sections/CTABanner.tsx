@@ -96,9 +96,9 @@ export default function CTABanner() {
                 style={{ color: formData.course ? 'white' : 'rgba(255, 255, 255, 0.4)' }}
               >
                 <option value="" disabled className="text-slate-900">Select a Course</option>
-                <option value="SANKALP" className="text-slate-900">SANKALP - JEE Advanced</option>
-                <option value="VIJAY" className="text-slate-900">VIJAY - NEET Foundation</option>
-                <option value="LAKSHYA" className="text-slate-900">LAKSHYA - Target JEE/NEET</option>
+                <option value="PRE-FOUNDATION" className="text-slate-900">PRE-FOUNDATION (Class VIII, IX, X)</option>
+                <option value="FOUNDATION" className="text-slate-900">FOUNDATION (Class XI & XII)</option>
+                <option value="TARGET" className="text-slate-900">TARGET (Class XII Passed)</option>
               </select>
               <div className="absolute inset-y-0 right-4 flex items-center pointer-events-none">
                 <svg className="w-4 h-4 text-white/40" fill="none" stroke="currentColor" viewBox="0 0 24 24">

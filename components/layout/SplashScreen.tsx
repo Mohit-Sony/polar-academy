@@ -38,14 +38,10 @@ export default function SplashScreen() {
       }`}
     >
       <div className="animate-pulse">
-        <Image
-          src="/images/logo-polar.png"
-          alt="Polar JEE Academy"
-          width={240}
-          height={66}
-          priority
-          className="w-[200px] md:w-[280px] h-auto object-contain"
-        />
+        <div className="text-4xl md:text-5xl font-bold tracking-wide flex flex-col items-center text-slate-900">
+          <span>KAUTILYA</span>
+          <span className="text-orange-500 text-xl md:text-2xl tracking-normal mt-2">IIT ACADEMY</span>
+        </div>
       </div>
     </div>
   );

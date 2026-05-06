@@ -29,15 +29,10 @@ export default function Footer() {
         {/* Top row — Logo + Nav */}
         <div className="flex flex-col md:flex-row items-center justify-between gap-8 pb-10 border-b border-white/10">
           {/* Logo */}
-          <Link href="/" aria-label="Polar JEE Academy home">
-            <div className="bg-white px-4 py-2 rounded-lg inline-block">
-              <Image
-                src="/images/logo-polar.png"
-                alt="Polar JEE Academy"
-                width={140}
-                height={36}
-                className="h-8 w-auto object-contain"
-              />
+          <Link href="/" aria-label="Kautilya IIT Academy home">
+            <div className="text-3xl font-bold tracking-wide flex flex-col text-white">
+              <span>KAUTILYA</span>
+              <span className="text-orange-500 text-sm tracking-normal">IIT ACADEMY</span>
             </div>
           </Link>
 
@@ -79,7 +74,7 @@ export default function Footer() {
         {/* Bottom row — Copyright */}
         <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4">
           <p className="text-sm text-slate-400">
-            © {new Date().getFullYear()} Polar JEE Academy. All rights reserved.
+            © {new Date().getFullYear()} Kautilya IIT Academy. All rights reserved. | Sikar (Rajasthan) 332001 | 01572244588
           </p>
           <div className="flex items-center gap-6">
             <Link href="#" className="text-sm text-slate-400 hover:text-white transition-colors">Privacy Policy</Link>
