@@ -38,10 +38,14 @@ export default function SplashScreen() {
       }`}
     >
       <div className="animate-pulse">
-        <div className="text-4xl md:text-5xl font-bold tracking-wide flex flex-col items-center text-slate-900">
-          <span>KAUTILYA</span>
-          <span className="text-orange-500 text-xl md:text-2xl tracking-normal mt-2">IIT ACADEMY</span>
-        </div>
+        <Image 
+          src="/kautilya-logo.jpg" 
+          alt="Kautilya IIT Academy Logo" 
+          width={240} 
+          height={66}
+          className="w-[200px] md:w-[240px] h-auto object-contain rounded-md"
+          priority
+        />
       </div>
     </div>
   );

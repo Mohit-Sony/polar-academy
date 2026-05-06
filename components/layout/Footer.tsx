@@ -29,11 +29,14 @@ export default function Footer() {
         {/* Top row — Logo + Nav */}
         <div className="flex flex-col md:flex-row items-center justify-between gap-8 pb-10 border-b border-white/10">
           {/* Logo */}
-          <Link href="/" aria-label="Kautilya IIT Academy home">
-            <div className="text-3xl font-bold tracking-wide flex flex-col text-white">
-              <span>KAUTILYA</span>
-              <span className="text-orange-500 text-sm tracking-normal">IIT ACADEMY</span>
-            </div>
+          <Link href="/" className="flex-shrink-0" aria-label="Kautilya IIT Academy home">
+            <Image 
+              src="/kautilya-logo.jpg" 
+              alt="Kautilya IIT Academy Logo" 
+              width={160} 
+              height={44}
+              className="w-[140px] md:w-[160px] h-auto object-contain rounded-md"
+            />
           </Link>
 
           {/* Nav links */}

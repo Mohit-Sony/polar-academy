@@ -13,7 +13,7 @@ export interface Course {
 export const courses: Course[] = [
   {
     id: 1,
-    image: "/images/students/m1.png",
+    image: "/images/course-prefoundation.png",
     category: "Pre-Foundation",
     title: "PRE-FOUNDATION",
     subtitle: "Early Head Start",
@@ -30,7 +30,7 @@ export const courses: Course[] = [
   },
   {
     id: 2,
-    image: "/images/students/w1.png",
+    image: "/images/course-foundation.png",
     category: "Foundation",
     title: "FOUNDATION",
     subtitle: "Dual Power Prep",
@@ -47,7 +47,7 @@ export const courses: Course[] = [
   },
   {
     id: 3,
-    image: "/images/students/m2.png",
+    image: "/images/course-target.png",
     category: "Target",
     title: "TARGET",
     subtitle: "Dropper Intensive",
