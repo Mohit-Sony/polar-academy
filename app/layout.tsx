@@ -24,13 +24,17 @@ const chopin = localFont({
 });
 
 export const metadata: Metadata = {
-  title: "EduLearn — Best Online Platform for Education",
+  title: "Polar Academy | Sikar's Most Trusted JEE Foundation Program",
   description:
-    "Online courses from the world's leading experts. Join 17 million learners today and advance your career with our flexible, expert-led online education platform.",
-  keywords: "online learning, e-learning, courses, education, skills, certification",
+    "Polar JEE Academy provides structured learning, proven methods, and exceptional results for JEE Advanced and NEET. Join our expert faculty in Sikar.",
+  keywords: "Polar Academy, JEE Foundation, NEET Preparation, Sikar Coaching, IIT JEE, Education",
+  icons: {
+    icon: '/icon.png',
+    apple: '/apple-icon.png',
+  },
   openGraph: {
-    title: "EduLearn — Best Online Platform for Education",
-    description: "Join 17 million learners. Expert-led online courses at your own pace.",
+    title: "Polar Academy | Sikar's Most Trusted JEE Foundation Program",
+    description: "Structured learning, proven methods, and exceptional results for JEE and NEET.",
     type: "website",
   },
 };

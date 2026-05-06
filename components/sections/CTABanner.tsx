@@ -43,8 +43,7 @@ export default function CTABanner() {
 
         {/* Heading */}
         <h2 className="text-white mb-4 max-w-2xl mx-auto font-bold tracking-tight">
-          Enroll Now for the{" "}
-          <span className="text-orange-300">Upcoming Batch.</span>
+          <span className="text-orange-300">Enroll Now for the Upcoming Batch.</span>
         </h2>
         <p className="text-white/60 mb-10 max-w-xl mx-auto text-lg leading-relaxed">
           Secure your spot today. Fill out the form below to begin your journey with our expert faculty.

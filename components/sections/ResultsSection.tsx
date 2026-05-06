@@ -44,6 +44,32 @@ const resultsData = {
 
 export default function ResultsSection() {
   const [activeTab, setActiveTab] = useState<keyof typeof resultsData>("2024");
+  const [isExpanded, setIsExpanded] = useState(false);
+
+  const handleTabChange = (year: keyof typeof resultsData) => {
+    setActiveTab(year);
+    setIsExpanded(false); // Reset expansion when switching tabs
+  };
+
+  const getVisibilityClass = (idx: number) => {
+    if (isExpanded) return "flex";
+    if (idx >= 15) return "hidden";
+    if (idx >= 12) return "hidden xl:flex";
+    if (idx >= 9) return "hidden md:flex";
+    if (idx >= 8) return "hidden sm:flex";
+    return "flex";
+  };
+
+  const getButtonVisibilityClass = () => {
+    const items = resultsData[activeTab];
+    if (isExpanded) return "flex";
+    let classes = "flex ";
+    if (items.length <= 15) classes += "xl:hidden ";
+    if (items.length <= 12) classes += "md:hidden ";
+    if (items.length <= 9) classes += "sm:hidden ";
+    if (items.length <= 8) classes += "hidden ";
+    return classes.trim();
+  };
 
   return (
     <section className="section-padding bg-slate-50" id="results">
@@ -63,7 +89,7 @@ export default function ResultsSection() {
           {(Object.keys(resultsData) as Array<keyof typeof resultsData>).map((year) => (
             <button
               key={year}
-              onClick={() => setActiveTab(year)}
+              onClick={() => handleTabChange(year)}
               className={`px-8 py-3.5 rounded-full font-bold text-sm transition-all shadow-sm border-2 ${
                 activeTab === year
                   ? "bg-orange-300 text-slate-900 border-orange-300 shadow-md"
@@ -77,11 +103,11 @@ export default function ResultsSection() {
 
         {/* Modern Cards Grid */}
         <div className="bg-white rounded-3xl shadow-sm border border-slate-200 overflow-hidden">
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-1 bg-slate-100">
-            {resultsData[activeTab].map((student) => (
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 xl:grid-cols-5 gap-1 bg-slate-100">
+            {resultsData[activeTab].map((student, index) => (
               <div
                 key={student.id}
-                className="group hover:shadow-[0_8px_30px_rgb(0,0,0,0.12)] hover:z-10 transition-all duration-300 flex flex-col relative bg-white"
+                className={`group hover:shadow-[0_8px_30px_rgb(0,0,0,0.12)] hover:z-10 transition-all duration-300 flex-col relative bg-white ${getVisibilityClass(index)}`}
               >
                 {/* Image Container */}
                 <div className="relative w-full aspect-[4/5] overflow-hidden bg-slate-900 group-hover:bg-slate-800 transition-colors duration-500">
@@ -135,6 +161,27 @@ export default function ResultsSection() {
             ))}
           </div>
         </div>
+
+        {/* View More Button */}
+        <div className={`justify-center mt-12 ${getButtonVisibilityClass()}`}>
+          <button
+            onClick={() => setIsExpanded(!isExpanded)}
+            className="px-8 py-3.5 rounded-full text-[15px] font-bold border-2 border-slate-300 text-slate-700 hover:border-slate-900 hover:bg-slate-900 hover:text-white transition-all shadow-sm flex items-center gap-2"
+          >
+            {isExpanded ? (
+              <>
+                Show Less
+                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M5 15l7-7 7 7" /></svg>
+              </>
+            ) : (
+              <>
+                View All Results
+                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M19 9l-7 7-7-7" /></svg>
+              </>
+            )}
+          </button>
+        </div>
+
       </div>
     </section>
   );
