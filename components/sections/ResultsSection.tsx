@@ -29,7 +29,7 @@ const generateStudents = (year: string) => {
       id: parseInt(year) * 100 + i,
       name,
       fatherName: fathers[i % fathers.length],
-      rank: `AIR ${Math.floor(Math.random() * 500) + 1}`,
+      rank: `AIR ${Math.floor((i * 137.5) % 500) + 1}`,
       exam: i % 2 === 0 ? "JEE Advanced" : "NEET",
       photo,
       with12th: i % 3 === 0,
