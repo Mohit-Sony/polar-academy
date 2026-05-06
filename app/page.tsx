@@ -18,7 +18,7 @@ export default function Home() {
         <FeaturesSection />
         <CoursesSection />
         <TeamSection />
-        <WhyChooseUs />
+        {/* <WhyChooseUs /> */}
         <CTABanner />
       </main>
       <Footer />

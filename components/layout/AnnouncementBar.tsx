@@ -18,7 +18,7 @@ export default function AnnouncementBar({ visible = true, onClose }: Announcemen
 
   if (!isVisible) return null;
 
-  const text = "✦  56+ Pre-built websites now available  ✦  New courses added every week  ✦  Get 30% off your first course  ✦  Join 17 million learners worldwide  ✦  Certified instructors from top universities  ✦  56+ Pre-built websites now available  ✦  New courses added every week  ✦  Get 30% off your first course  ✦  Join 17 million learners worldwide  ✦  Certified instructors from top universities";
+  const text = "✦  Admissions Open for JEE/NEET 2025-26  ✦  Enroll in SANKALP, VIJAY & LAKSHYA Batches  ✦  Learn from Top Faculty  ✦  Achieve Your Dream Rank  ✦  New Batches Starting Soon  ✦  Admissions Open for JEE/NEET 2025-26  ✦  Enroll in SANKALP, VIJAY & LAKSHYA Batches  ✦  Learn from Top Faculty  ✦  Achieve Your Dream Rank  ✦  New Batches Starting Soon";
 
   return (
     <div

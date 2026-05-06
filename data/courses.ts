@@ -1,89 +1,59 @@
 export interface Course {
   id: number;
   image: string;
-  category: string;
-  categoryColor: string;
+  category: string; // e.g., "Engineering", "Medical", "Prefoundation"
   title: string;
-  instructor: string;
-  rating: number;
-  reviewCount: number;
-  price: string;
-  originalPrice?: string;
-  tag?: string;
+  badges: string[];
+  description: string;
 }
 
 export const courses: Course[] = [
   {
     id: 1,
-    image: "/images/demo-elearning-courses-01.webp",
-    category: "Business",
-    categoryColor: "#EF991F",
-    title: "Business accounting and taxation fundamental",
-    instructor: "Colene Doole",
-    rating: 4.8,
-    reviewCount: 1240,
-    price: "$59",
-    originalPrice: "$99",
-    tag: "Bestseller",
+    image: "/images/students/m1.png",
+    category: "Engineering",
+    title: "SANKALP",
+    badges: ["Target-2027", "Two Years", "JEE"],
+    description: "For Class X to XI Moving Students. A comprehensive 2-year foundation program designed to build strong core concepts, enhance problem-solving skills, and ensure top ranks in JEE.",
   },
   {
     id: 2,
-    image: "/images/demo-elearning-courses-02.webp",
-    category: "Finance",
-    categoryColor: "#2946F3",
-    title: "Finance fundamentals of management and planning",
-    instructor: "Martin Fox",
-    rating: 4.7,
-    reviewCount: 980,
-    price: "$79",
-    originalPrice: "$129",
+    image: "/images/students/w1.png",
+    category: "Engineering",
+    title: "VIJAY",
+    badges: ["Target-2027", "Two Years", "JEE"],
+    description: "For Class XI to XII Moving Students. An intensive program focused on rigorous syllabus coverage, advanced concept mastery, and strategic exam preparation for ultimate success.",
   },
   {
     id: 3,
-    image: "/images/demo-elearning-courses-03.webp",
-    category: "Development",
-    categoryColor: "#D5D52B",
-    title: "Introduction to application design and development",
-    instructor: "Sarah Chen",
-    rating: 4.9,
-    reviewCount: 2150,
-    price: "$69",
-    tag: "New",
+    image: "/images/students/m2.png",
+    category: "Engineering",
+    title: "LAKSHYA",
+    badges: ["Target-2026", "One Year", "JEE"],
+    description: "For Class XII Passed Students. A high-impact, fast-tracked target program focusing on extensive revision, mock tests, and maximizing your competitive exam scores.",
   },
   {
     id: 4,
-    image: "/images/demo-elearning-courses-04.webp",
-    category: "Science",
-    categoryColor: "#313E3B",
-    title: "Genetic testing and sequencing technique",
-    instructor: "Dr. James Wright",
-    rating: 4.6,
-    reviewCount: 730,
-    price: "$89",
-    originalPrice: "$149",
+    image: "/images/students/w2.png",
+    category: "Medical",
+    title: "SANKALP",
+    badges: ["Target-2027", "Two Years", "NEET"],
+    description: "For Class X to XI Moving Students. A comprehensive 2-year foundation program designed to build strong core concepts, enhance problem-solving skills, and ensure top ranks in NEET.",
   },
   {
     id: 5,
-    image: "/images/demo-elearning-courses-05.webp",
-    category: "Design",
-    categoryColor: "#EF991F",
-    title: "Introduction to web design and visualization",
-    instructor: "Emma Rodriguez",
-    rating: 4.8,
-    reviewCount: 1870,
-    price: "$49",
-    tag: "Popular",
+    image: "/images/students/m3.png",
+    category: "Medical",
+    title: "VIJAY",
+    badges: ["Target-2027", "Two Years", "NEET"],
+    description: "For Class XI to XII Moving Students. An intensive program focused on rigorous syllabus coverage, advanced concept mastery, and strategic exam preparation for ultimate success.",
   },
   {
     id: 6,
-    image: "/images/demo-elearning-courses-06.webp",
-    category: "Language",
-    categoryColor: "#2946F3",
-    title: "Improve your english vocabulary and language",
-    instructor: "Amanda Lee",
-    rating: 4.5,
-    reviewCount: 560,
-    price: "$39",
-    originalPrice: "$69",
+    image: "/images/students/w3.png",
+    category: "Medical",
+    title: "LAKSHYA",
+    badges: ["Target-2026", "One Year", "NEET"],
+    description: "For Class XII Passed Students. A high-impact, fast-tracked target program focusing on extensive revision, mock tests, and maximizing your competitive exam scores.",
   },
 ];

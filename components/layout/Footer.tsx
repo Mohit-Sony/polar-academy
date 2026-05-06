@@ -76,20 +76,14 @@ export default function Footer() {
           </div>
         </div>
 
-        {/* Bottom row — Copyright + Privacy */}
+        {/* Bottom row — Copyright */}
         <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4">
           <p className="text-sm text-slate-400">
-            © 2026 Polar JEE Academy. All rights reserved. Powered by{" "}
-            <a href="#" className="text-slate-300 hover:text-white transition-colors">Polar</a>.
+            © {new Date().getFullYear()} Polar JEE Academy. All rights reserved.
           </p>
           <div className="flex items-center gap-6">
-            <a href="#" className="text-sm text-slate-400 hover:text-white transition-colors flex items-center gap-1.5">
-              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
-              </svg>
-              Protecting your privacy
-            </a>
-            <a href="#" className="text-sm text-slate-400 hover:text-white transition-colors">Terms of Service</a>
+            <Link href="#" className="text-sm text-slate-400 hover:text-white transition-colors">Privacy Policy</Link>
+            <Link href="#" className="text-sm text-slate-400 hover:text-white transition-colors">Terms of Service</Link>
           </div>
         </div>
       </div>
