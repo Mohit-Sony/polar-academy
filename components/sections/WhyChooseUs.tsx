@@ -36,16 +36,15 @@ export default function WhyChooseUs() {
               Why choose us
             </span>
             <h2 className="text-white mb-6 leading-tight">
-              Providing amazing{" "}
-              <span className="text-[#D5D52B]">online courses.</span>
+              A Truly <span className="text-[#D5D52B]">Premium Learning Experience.</span>
             </h2>
             <p className="text-white/60 mb-4 text-lg leading-relaxed">
-              Outstanding online learning
+              Excellence in every step of your journey
             </p>
             <p className="text-white/50 mb-10 leading-relaxed">
-              We partner with leading universities and industry experts to deliver
-              courses that are both rigorous and practical. Our platform is trusted
-              by learners in 190+ countries.
+              We focus on delivering high-quality education through state-of-the-art
+              resources, personalized mentorship, and comprehensive study materials
+              designed to ensure your success.
             </p>
 
             {/* Checklist */}

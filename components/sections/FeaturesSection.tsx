@@ -8,8 +8,8 @@ const features = [
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
       </svg>
     ),
-    title: "Connect with effective methods",
-    desc: "Web-based training you can consume at your own pace. Courses are interactive and designed for real-world application.",
+    title: "Master concepts quickly",
+    desc: "Learn from top educators who break down complex problems into easy-to-understand steps.",
   },
   {
     icon: (
@@ -17,14 +17,14 @@ const features = [
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
       </svg>
     ),
-    title: "Increase your learning skills",
-    desc: "Web-based training you can consume at your own pace. Courses are interactive and designed for real-world application.",
+    title: "Strategic Exam Preparation",
+    desc: "Gain insights into exam patterns and learn the best strategies to maximize your score.",
   },
 ];
 
 export default function FeaturesSection() {
   return (
-    <section className="section-padding bg-[#F3F8F8]" id="features">
+    <section className="section-padding bg-[#F3F8F8]" id="experts">
       <div className="container-xl">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           {/* Left — Images */}
@@ -69,15 +69,15 @@ export default function FeaturesSection() {
 
           {/* Right — Text */}
           <div>
-            <span className="section-label">Online learning</span>
+            <span className="section-label">Expert Guidance</span>
             <h2 className="mb-6">
-              Online learning wherever{" "}
-              <em className="not-italic text-[#D5D52B]">and whenever.</em>
+              Learn From{" "}
+              <em className="not-italic text-[#D5D52B]">Top Experts.</em>
             </h2>
             <p className="text-[#828C8A] mb-10 text-lg leading-relaxed">
-              We bring world-class education directly to your screen. Whether you&apos;re
-              upskilling for a promotion or pivoting to an entirely new field, our
-              platform adapts to your goals and schedule.
+              We bring world-class educators directly to your screen. Whether you&apos;re
+              preparing for JEE, NEET, or strengthening your foundational knowledge, our
+              experts guide you every step of the way.
             </p>
 
             {/* Feature list */}
